@@ -3,57 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editable CV</title>
+    <title>Interactive CV</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f0f4f8;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
+
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
+
         h1, h2, h3 {
-            color: #007BFF; /* اللون الأزرق */
+            color: #007BFF;
         }
+
         .editable {
-            background-color: #f9f9f9;
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            display: inline-block;
+            border-bottom: 1px dashed #007BFF;
+            cursor: pointer;
         }
-        label {
+
+        .editable:hover {
+            background-color: #eef6ff;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .profile-pic {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin: 0 auto 20px;
+            text-align: center;
         }
-        input[type="text"], textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        button {
+
+        .save-btn {
             background-color: #007BFF;
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            display: inline-block;
         }
-        button:hover {
+
+        .save-btn:hover {
             background-color: #0056b3;
         }
-        img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 10px auto;
         }
     </style>
 </head>
@@ -61,37 +79,108 @@
 
 <div class="container">
     <h1>Editable CV</h1>
-    
+
     <!-- صورة قابلة للتعديل -->
-    <div>
+    <div class="profile-pic">
         <img id="profile-pic" src="path_to_your_image.png" alt="Profile Picture">
-        <br><br>
         <input type="file" id="imageUpload" accept="image/*">
     </div>
-    
+
     <!-- الاسم -->
-    <h2 id="name-display">الحارث محمد عباس</h2>
-    <label for="name">Name:</label>
-    <input type="text" id="name" value="الحارث محمد عباس">
-    
+    <h2>Name: <span id="name" class="editable">الحارث محمد عباس</span></h2>
+
     <!-- الملخص المهني -->
-    <h3>Professional Summary</h3>
-    <p id="summary-display">With 11 years of experience in Human Resources and Accounting...</p>
-    <label for="summary">Summary:</label>
-    <textarea id="summary">With 11 years of experience in Human Resources and Accounting...</textarea>
-    
+    <h3>Professional Summary:</h3>
+    <p id="summary" class="editable">
+        With 11 years of experience in Human Resources and Accounting, including expertise in government relations. 
+        Major skills encompass HR management, financial reporting, budgeting and forecasting, compliance, and strategic planning.
+        Holds a Master’s in Business Administration (HR), a Bachelor’s in Accounting, and a Diploma in Financial Accounting. 
+        Demonstrates a proven track record in enhancing HR operations, optimizing payroll and benefits administration, 
+        improving financial accuracy, and managing government interactions.
+    </p>
+
     <!-- الخبرة العملية -->
-    <h3>Work Experience</h3>
-    <p id="experience-display">Third Layer Wireless Communications Company, Riyadh, Saudi Oct 2022 – Oct 2024...</p>
-    <label for="experience">Experience:</label>
-    <textarea id="experience">Third Layer Wireless Communications Company, Riyadh, Saudi Oct 2022 – Oct 2024...</textarea>
-    
+    <h3>Work Experience:</h3>
+
+    <h4>Third Layer Wireless Communications Company, Riyadh, Saudi Oct 2022 – Oct 2024</h4>
+    <p id="experience1" class="editable">
+        Human Resources Officer<br>
+        - Oversaw HR operations for a large workforce, managing recruitment, onboarding, and employee relations.<br>
+        - Implemented HR policies and procedures, improving regulatory compliance and reducing employee grievances.<br>
+        - Conducted annual training programs for staff, leading to enhanced overall employee competency.<br>
+        - Administered employee benefits and compensation, achieving better cost management while ensuring accurate and timely payroll.<br>
+        - Analyzed HR metrics and produced monthly reports, supporting better decision-making and strategic planning.
+    </p>
+
+    <h4>Dawah and Guidance Association, Al-Muzahimiyah, Saudi Arabia Mar 2013 – Jan 2022</h4>
+    <p id="experience2" class="editable">
+        Accountant and HR Specialist<br>
+        - Managed the financial transactions and accounts of the association, ensuring the accuracy of financial records and reports.<br>
+        - Coordinated with various departments to implement financial and HR systems that enhanced overall efficiency.<br>
+        - Handled employee relations, recruitment, and benefits administration, ensuring smooth HR operations.<br>
+        - Supported strategic planning and governance initiatives by providing financial and human resource insights to leadership.
+    </p>
+
+    <h4>Al-Khayal Contracting Est, Riyadh, Saudi Arabia Aug 2012 – Feb 2013</h4>
+    <p id="experience3" class="editable">
+        Accounting Officer<br>
+        - Processed and recorded daily transactions, ensuring 100% accuracy and compliance with financial regulations.<br>
+        - Assisted in the preparation of financial statements and reports, contributing to on-time financial audits and reviews with a 98% compliance rate.<br>
+        - Managed vendor accounts and resolved discrepancies, improving supplier payment processes and relationships by 20%.<br>
+        - Monitored and analyzed financial data to support budgeting and forecasting, enhancing planning accuracy by 15%.
+    </p>
+
+    <!-- المهارات -->
+    <h3>Skills:</h3>
+    <ul id="skills" class="editable">
+        <li>HR Management</li>
+        <li>Financial Reporting</li>
+        <li>Budgeting and Forecasting</li>
+        <li>Compliance and Regulation</li>
+        <li>Employee Training and Development</li>
+        <li>Vendor Management</li>
+        <li>Recruitment and Onboarding</li>
+        <li>Employee Benefits and Compensation Administration</li>
+        <li>Payroll Processing</li>
+        <li>Accounting Software</li>
+        <li>ERP Systems</li>
+        <li>ClickUp Program</li>
+        <li>Government Systems Platforms (Saudi Arabia)</li>
+        <li>Microsoft Office Programs</li>
+        <li>Data Analysis</li>
+        <li>Strategic Planning</li>
+    </ul>
+
+    <!-- اللغات -->
+    <h3>Languages:</h3>
+    <p id="languages" class="editable">
+        Arabic: Native<br>
+        English: Intermediate
+    </p>
+
+    <!-- التعليم -->
+    <h3>Education:</h3>
+    <h4>Entrepreneurship & Business University, Saudi Arabia Mar 2022 – May 2024</h4>
+    <p id="education1" class="editable">
+        Master of Business Administration (MBA – HR)
+    </p>
+
+    <h4>Arab International Academy, Saudi Arabia Jul 2019 – Sep 2022</h4>
+    <p id="education2" class="editable">
+        Bachelor of Accounting
+    </p>
+
+    <h4>University of Khartoum, Khartoum, Sudan Apr 2009 – Jan 2012</h4>
+    <p id="education3" class="editable">
+        Diploma in Financial Accounting
+    </p>
+
     <!-- زر حفظ التعديلات -->
-    <button onclick="saveChanges()">Save Changes</button>
+    <button class="save-btn" onclick="saveChanges()">Save Changes</button>
 </div>
 
 <script>
-    // تحميل الصورة الجديدة
+    // تحميل صورة جديدة
     const imageInput = document.getElementById('imageUpload');
     imageInput.addEventListener('change', function() {
         const reader = new FileReader();
@@ -101,15 +190,36 @@
         reader.readAsDataURL(this.files[0]);
     });
 
+    // التفاعل مع الحقول القابلة للتعديل
+    const editableElements = document.querySelectorAll('.editable');
+
+    editableElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            const currentText = element.innerText;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = currentText;
+            input.style.width = '100%';
+            element.innerHTML = '';
+            element.appendChild(input);
+
+            // استعادة النص عند فقدان التركيز (blur)
+            input.addEventListener('blur', function() {
+                element.innerHTML = input.value;
+            });
+
+            // حفظ النص عند الضغط على Enter
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    element.innerHTML = input.value;
+                }
+            });
+        });
+    });
+
     // حفظ التعديلات
     function saveChanges() {
-        const name = document.getElementById('name').value;
-        const summary = document.getElementById('summary').value;
-        const experience = document.getElementById('experience').value;
-
-        document.getElementById('name-display').innerText = name;
-        document.getElementById('summary-display').innerText = summary;
-        document.getElementById('experience-display').innerText = experience;
+        alert('Changes saved successfully!');
     }
 </script>
 
