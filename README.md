@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f7fc;
+            background-color: #f0f4f7;
             color: #333;
             margin: 0;
             padding: 0;
@@ -19,8 +19,8 @@
             margin: auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
             margin-top: 30px;
         }
 
@@ -31,14 +31,16 @@
 
         header img {
             border-radius: 50%;
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             object-fit: cover;
+            border: 5px solid #1e90ff;
         }
 
         h1 {
             color: #1e90ff;
-            margin: 10px 0;
+            margin: 15px 0;
+            font-size: 28px;
         }
 
         .contact-info {
@@ -73,15 +75,17 @@
         }
 
         .section ul li {
-            background-color: #f0f8ff;
-            margin: 5px 0;
+            background-color: #f9fbfd;
+            margin: 8px 0;
             padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            border-left: 5px solid #1e90ff;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .section ul li:hover {
             background-color: #e0f7fa;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         footer {
@@ -95,19 +99,27 @@
             font-size: 0.9em;
             color: #666;
         }
+
+        #image-upload {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <!-- إضافة الصورة الشخصية -->
-            <img src="/mnt/data/تنزيل.png" alt="الحارث محمد عباس">
+            <!-- مكان الصورة -->
+            <img id="profile-pic" src="تنزيل.png" alt="الحارث محمد عباس">
             <h1>الحارث محمد عباس</h1>
             <div class="contact-info">
                 <p>اتصال: +966543756069 | البريد الإلكتروني: <a href="mailto:alharith.moh@gmail.com">alharith.moh@gmail.com</a></p>
                 <p>العنوان: الرياض، السعودية | <a href="https://www.linkedin.com/in/الحارث-محمد-elharith-abas-77598a11a/" target="_blank">LinkedIn</a></p>
             </div>
+            <!-- زر تغيير الصورة -->
+            <input type="file" id="image-upload" accept="image/*" onchange="changeProfilePic(event)">
+            <br>
+            <button onclick="document.getElementById('image-upload').click()">تغيير الصورة</button>
         </header>
 
         <section class="section">
@@ -121,17 +133,17 @@
                 <li>
                     <strong>Third Layer Wireless Communications Company</strong> - الرياض، السعودية<br>
                     <em>أكتوبر 2022 – أكتوبر 2024</em><br>
-                    أخصائي موارد بشرية
+                    أخصائي موارد بشرية: أشرفت على عمليات الموارد البشرية، إدارة التوظيف، العلاقات الحكومية، وتطوير الإجراءات التنظيمية.
                 </li>
                 <li>
                     <strong>جمعية الدعوة والإرشاد وتوعية الجاليات</strong> - المزاحمية، السعودية<br>
                     <em>مارس 2013 – يناير 2022</em><br>
-                    محاسب وأخصائي موارد بشرية
+                    محاسب وأخصائي موارد بشرية: إدارة الحسابات، الرواتب، وميزانية الجمعية بشكل احترافي، وتحسين نظم الحوكمة.
                 </li>
                 <li>
                     <strong>مؤسسة الخيال للمقاولات</strong> - الرياض، السعودية<br>
                     <em>أغسطس 2012 – فبراير 2013</em><br>
-                    مسؤول حسابات
+                    مسؤول حسابات: إدارة التعاملات اليومية وإعداد التقارير المالية.
                 </li>
             </ul>
         </section>
@@ -148,6 +160,8 @@
                 <li>التوظيف وإدارة الأداء</li>
                 <li>نظم الـ ERP</li>
                 <li>التحليل المالي وإدارة البيانات</li>
+                <li>استخدام برامج Microsoft Office</li>
+                <li>إدارة العلاقات الحكومية</li>
             </ul>
         </section>
 
@@ -164,6 +178,17 @@
             <p>© 2024 الحارث محمد عباس. جميع الحقوق محفوظة.</p>
         </footer>
     </div>
+
+    <script>
+        function changeProfilePic(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('profile-pic');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
 
 </body>
 </html>
