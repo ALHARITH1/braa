@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,191 +7,156 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
-
+        
         .container {
             width: 80%;
-            margin: 0 auto;
+            margin: auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-left: 10px solid #007bff;
-        }
-
-        h1, h2, h3 {
-            color: #007bff;
-        }
-
-        .section-title {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
             margin-top: 30px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
+        }
+
+        header {
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .section-content {
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #1e90ff;
+            margin: 10px 0;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #1e90ff;
+            border-bottom: 2px solid #1e90ff;
+            padding-bottom: 10px;
+        }
+
+        .section {
             margin-bottom: 30px;
         }
 
-        ul {
+        .section ul {
             list-style-type: none;
             padding: 0;
         }
 
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        .job-title {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .date {
-            color: #666;
-            font-style: italic;
-        }
-
-        .contact-info, .skills {
-            margin-top: 10px;
-        }
-
-        .contact-info p, .skills p {
+        .section ul li {
+            background-color: #f0f8ff;
             margin: 5px 0;
-        }
-
-        .profile-picture {
-            float: right;
-            width: 150px;
-            height: 150px;
-            background-color: #e9ecef;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        .skills-section {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
+            padding: 10px;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        .skills-section ul {
-            padding-left: 20px;
+        .section ul li:hover {
+            background-color: #e0f7fa;
         }
 
-        .skills-section ul li {
-            color: white;
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
         }
 
-        .languages-section ul li {
-            color: #007bff;
-        }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+        footer p {
+            font-size: 0.9em;
+            color: #666;
         }
 
     </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="profile-picture">
-            <!-- قم بإدراج رابط لصورتك الشخصية هنا -->
-            <img src="profile.jpg" alt="صورة شخصية" style="width: 100%; height: 100%; border-radius: 50%;">
-        </div>
+        <header>
+            <img src="/mnt/data/تنزيل.png" alt="الحارث محمد عباس">
+            <h1>الحارث محمد عباس</h1>
+            <div class="contact-info">
+                <p>اتصال: +966543756069 | البريد الإلكتروني: <a href="mailto:alharith.moh@gmail.com">alharith.moh@gmail.com</a></p>
+                <p>العنوان: الرياض، السعودية | <a href="https://www.linkedin.com/in/الحارث-محمد-elharith-abas-77598a11a/" target="_blank">LinkedIn</a></p>
+            </div>
+        </header>
 
-        <h1>الحارث محمد عباس</h1>
+        <section class="section">
+            <h2>الملخص المهني</h2>
+            <p>أكثر من 11 عامًا من الخبرة في إدارة الموارد البشرية والمحاسبة، بما في ذلك العلاقات الحكومية والتخطيط الاستراتيجي. يحمل درجة ماجستير في إدارة الأعمال (HR) وبكالوريوس في المحاسبة. خبرة في تحسين العمليات الإدارية والمالية، وتطوير استراتيجيات الامتثال، وتحليل البيانات لدعم اتخاذ القرارات.</p>
+        </section>
 
-        <div class="contact-info">
-            <p><strong>الهاتف:</strong> +966543756069</p>
-            <p><strong>البريد الإلكتروني:</strong> <a href="mailto:alharith.moh@gmail.com">alharith.moh@gmail.com</a></p>
-            <p><strong>العنوان:</strong> الرياض، المملكة العربية السعودية</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/الحارث-محمد-elharith-abas-77598a11a/" target="_blank">رابط الملف الشخصي</a></p>
-        </div>
-
-        <div class="section-content">
-            <h2 class="section-title">الملخص المهني</h2>
-            <p>بخبرة تزيد عن 11 عامًا في إدارة الموارد البشرية والمحاسبة، مع خبرة عميقة في العلاقات الحكومية. تشمل مهاراتي إدارة الموارد البشرية، التقارير المالية، الميزانية والتنبؤ، الامتثال، والتخطيط الاستراتيجي. أحمل درجة الماجستير في إدارة الأعمال (HR)، ودرجة البكالوريوس في المحاسبة، ودبلوم في المحاسبة المالية. أمتلك سجلًا حافلًا في تحسين عمليات الموارد البشرية، تحسين إدارة الرواتب والمزايا، وزيادة دقة التقارير المالية.</p>
-        </div>
-
-        <div class="section-content">
-            <h2 class="section-title">الخبرات المهنية</h2>
-
-            <h3>أخصائي موارد بشرية - شركة Layer3</h3>
-            <p class="date">أكتوبر 2022 - أكتوبر 2024</p>
+        <section class="section">
+            <h2>الخبرة العملية</h2>
             <ul>
-                <li>الإشراف على عمليات الموارد البشرية، بما في ذلك التوظيف والتأهيل وعلاقات الموظفين.</li>
-                <li>تنفيذ سياسات الموارد البشرية وتحسين الامتثال التنظيمي.</li>
-                <li>إدارة الرواتب والمزايا، وتحسين الكفاءة المالية.</li>
+                <li>
+                    <strong>Third Layer Wireless Communications Company</strong> - الرياض، السعودية<br>
+                    <em>أكتوبر 2022 – أكتوبر 2024</em><br>
+                    أخصائي موارد بشرية
+                </li>
+                <li>
+                    <strong>جمعية الدعوة والإرشاد وتوعية الجاليات</strong> - المزاحمية، السعودية<br>
+                    <em>مارس 2013 – يناير 2022</em><br>
+                    محاسب وأخصائي موارد بشرية
+                </li>
+                <li>
+                    <strong>مؤسسة الخيال للمقاولات</strong> - الرياض، السعودية<br>
+                    <em>أغسطس 2012 – فبراير 2013</em><br>
+                    مسؤول حسابات
+                </li>
             </ul>
+        </section>
 
-            <h3>أخصائي موارد بشرية ومحاسب - جمعية الدعوة والإرشاد</h3>
-            <p class="date">مارس 2013 - يناير 2022</p>
-            <ul>
-                <li>إدارة المعاملات المالية والحسابات بدقة وتقديم تقارير مالية دورية.</li>
-                <li>دعم التخطيط الاستراتيجي والمبادرات الحوكمة.</li>
-            </ul>
-
-            <h3>مراقب مستندات ومحاسب - مؤسسة الخيال للمقاولات</h3>
-            <p class="date">أغسطس 2012 - فبراير 2013</p>
-            <ul>
-                <li>معالجة وتسجيل المعاملات اليومية وضمان الامتثال للمعايير المالية.</li>
-            </ul>
-        </div>
-
-        <div class="section-content skills-section">
-            <h2 class="section-title">المهارات</h2>
+        <section class="section">
+            <h2>المهارات</h2>
             <ul>
                 <li>إدارة الموارد البشرية</li>
                 <li>التقارير المالية</li>
-                <li>إعداد الميزانية والتنبؤ</li>
-                <li>الامتثال والتشريعات</li>
-                <li>تدريب وتطوير الموظفين</li>
+                <li>إعداد الميزانية والتنبؤ المالي</li>
+                <li>الامتثال واللوائح</li>
+                <li>التدريب والتطوير</li>
                 <li>إدارة الموردين</li>
-                <li>التوظيف وتأهيل الموظفين</li>
-                <li>إدارة المزايا والتعويضات</li>
-                <li>معالجة الرواتب</li>
-                <li>برامج المحاسبة</li>
-                <li>أنظمة ERP</li>
-                <li>برنامج ClickUp</li>
-                <li>منصات الأنظمة الحكومية (السعودية)</li>
-                <li>برامج Microsoft Office</li>
-                <li>تحليل البيانات</li>
-                <li>التخطيط الاستراتيجي</li>
-                <li>إصلاح المشاكل التقنية</li>
-                <li>تركيب المعدات</li>
-                <li>إدارة الأنظمة</li>
-                <li>اختبار الأنظمة</li>
-                <li>دعم الهندسة</li>
+                <li>التوظيف وإدارة الأداء</li>
+                <li>نظم الـ ERP</li>
+                <li>التحليل المالي وإدارة البيانات</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section-content languages-section">
-            <h2 class="section-title">اللغات</h2>
+        <section class="section">
+            <h2>التعليم</h2>
             <ul>
-                <li><strong>العربية:</strong> اللغة الأم</li>
-                <li><strong>الإنجليزية:</strong> متوسط</li>
+                <li>ماجستير في إدارة الأعمال (HR) - جامعة ريادة الأعمال والأعمال، السعودية - 2024</li>
+                <li>بكالوريوس في المحاسبة - الأكاديمية العربية الدولية، السعودية - 2022</li>
+                <li>دبلوم في المحاسبة المالية - جامعة الخرطوم، السودان - 2012</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section-content">
-            <h2 class="section-title">التعليم</h2>
-            <ul>
-                <li><strong>ماجستير إدارة الأعمال (MBA - الموارد البشرية)</strong> - جامعة ريادة الأعمال والأعمال، السعودية (2022-2024)</li>
-                <li><strong>بكالوريوس في المحاسبة</strong> - الأكاديمية العربية الدولية، السعودية (2019-2022)</li>
-                <li><strong>دبلوم في المحاسبة المالية</strong> - جامعة الخرطوم، السودان (2009-2012)</li>
-            </ul>
-        </div>
-    </div>
-</body>
-</html>
+        <footer>
+            <p>© 2024 الحارث محمد عباس. جميع الحقوق محفوظة.</p>
