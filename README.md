@@ -7,19 +7,19 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
+            background-color: #f4f7fc;
             color: #333;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
+            direction: rtl;
         }
-        
+
         .container {
             width: 80%;
             margin: auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin-top: 30px;
         }
@@ -42,8 +42,9 @@
         }
 
         .contact-info {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-align: center;
+            color: #555;
         }
 
         .contact-info a {
@@ -59,6 +60,7 @@
             color: #1e90ff;
             border-bottom: 2px solid #1e90ff;
             padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .section {
@@ -93,13 +95,13 @@
             font-size: 0.9em;
             color: #666;
         }
-
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
+            <!-- إضافة الصورة الشخصية -->
             <img src="/mnt/data/تنزيل.png" alt="الحارث محمد عباس">
             <h1>الحارث محمد عباس</h1>
             <div class="contact-info">
@@ -160,3 +162,8 @@
 
         <footer>
             <p>© 2024 الحارث محمد عباس. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
