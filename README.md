@@ -1,213 +1,227 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السيرة الذاتية - الحارث محمد عباس</title>
+    <title>Interactive CV</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
+            background-color: #f0f4f8;
             color: #333;
             margin: 0;
             padding: 0;
-            direction: rtl;
         }
 
         .container {
-            width: 90%;
-            margin: auto;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            margin-top: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-            background-color: #1e90ff;
-            padding: 20px;
-            border-radius: 15px 15px 0 0;
+        h1, h2, h3 {
+            color: #007BFF;
         }
 
-        header img {
+        .editable {
+            display: inline-block;
+            border-bottom: 1px dashed #007BFF;
+            cursor: pointer;
+        }
+
+        .editable:hover {
+            background-color: #eef6ff;
+        }
+
+        img {
             border-radius: 50%;
             width: 150px;
             height: 150px;
             object-fit: cover;
-            border: 5px solid #ffffff;
-            background-color: #fff;
         }
 
-        h1 {
-            color: #ffffff;
-            margin: 15px 0;
-            font-size: 28px;
-        }
-
-        .contact-info {
-            margin-bottom: 20px;
+        .profile-pic {
+            display: block;
+            margin: 0 auto 20px;
             text-align: center;
-            color: #fff;
         }
 
-        .contact-info a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        h2 {
-            color: #1e90ff;
-            border-bottom: 2px solid #1e90ff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .section ul li {
-            background-color: #f0f8ff;
-            margin: 8px 0;
-            padding: 10px;
-            border-radius: 8px;
-            border-left: 5px solid #1e90ff;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section ul li:hover {
-            background-color: #e6f7ff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-        }
-
-        footer p {
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        /* زر لتحميل الصورة */
-        .image-upload {
-            display: none;
-        }
-
-        .upload-btn {
-            margin-top: 10px;
+        .save-btn {
+            background-color: #007BFF;
+            color: white;
             padding: 10px 20px;
-            background-color: #1e90ff;
-            color: #ffffff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            display: inline-block;
         }
 
-        .upload-btn:hover {
-            background-color: #1c7ed6;
+        .save-btn:hover {
+            background-color: #0056b3;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 10px auto;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <!-- الصورة الشخصية -->
-            <img id="profile-pic" src="تنزيل.png" alt="الحارث محمد عباس">
-            <h1>الحارث محمد عباس</h1>
-            <div class="contact-info">
-                <p>اتصال: +966543756069 | البريد الإلكتروني: <a href="mailto:alharith.moh@gmail.com">alharith.moh@gmail.com</a></p>
-                <p>العنوان: الرياض، السعودية | <a href="https://www.linkedin.com/in/الحارث-محمد-elharith-abas-77598a11a/" target="_blank">LinkedIn</a></p>
-            </div>
-            <!-- زر تغيير الصورة -->
-            <input type="file" id="image-upload" class="image-upload" accept="image/*" onchange="changeProfilePic(event)">
-            <br>
-            <button class="upload-btn" onclick="document.getElementById('image-upload').click()">تغيير الصورة</button>
-        </header>
+<div class="container">
+    <h1>Editable CV</h1>
 
-        <section class="section">
-            <h2>الملخص المهني</h2>
-            <p>أكثر من 11 عامًا من الخبرة في إدارة الموارد البشرية والمحاسبة، بما في ذلك العلاقات الحكومية والتخطيط الاستراتيجي. يحمل درجة ماجستير في إدارة الأعمال (HR) وبكالوريوس في المحاسبة. خبرة في تحسين العمليات الإدارية والمالية، وتطوير استراتيجيات الامتثال، وتحليل البيانات لدعم اتخاذ القرارات.</p>
-        </section>
-
-        <section class="section">
-            <h2>الخبرة العملية</h2>
-            <ul>
-                <li>
-                    <strong>Third Layer Wireless Communications Company</strong> - الرياض، السعودية<br>
-                    <em>أكتوبر 2022 – أكتوبر 2024</em><br>
-                    أخصائي موارد بشرية: أشرفت على عمليات الموارد البشرية، إدارة التوظيف، العلاقات الحكومية، وتطوير الإجراءات التنظيمية.
-                </li>
-                <li>
-                    <strong>جمعية الدعوة والإرشاد وتوعية الجاليات</strong> - المزاحمية، السعودية<br>
-                    <em>مارس 2013 – يناير 2022</em><br>
-                    محاسب وأخصائي موارد بشرية: إدارة الحسابات، الرواتب، وميزانية الجمعية بشكل احترافي، وتحسين نظم الحوكمة.
-                </li>
-                <li>
-                    <strong>مؤسسة الخيال للمقاولات</strong> - الرياض، السعودية<br>
-                    <em>أغسطس 2012 – فبراير 2013</em><br>
-                    مسؤول حسابات: إدارة التعاملات اليومية وإعداد التقارير المالية.
-                </li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>المهارات</h2>
-            <ul>
-                <li>إدارة الموارد البشرية</li>
-                <li>التقارير المالية</li>
-                <li>إعداد الميزانية والتنبؤ المالي</li>
-                <li>الامتثال واللوائح</li>
-                <li>التدريب والتطوير</li>
-                <li>إدارة الموردين</li>
-                <li>التوظيف وإدارة الأداء</li>
-                <li>نظم الـ ERP</li>
-                <li>التحليل المالي وإدارة البيانات</li>
-                <li>استخدام برامج Microsoft Office</li>
-                <li>إدارة العلاقات الحكومية</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>التعليم</h2>
-            <ul>
-                <li>ماجستير في إدارة الأعمال (HR) - جامعة ريادة الأعمال والأعمال، السعودية - 2024</li>
-                <li>بكالوريوس في المحاسبة - الأكاديمية العربية الدولية، السعودية - 2022</li>
-                <li>دبلوم في المحاسبة المالية - جامعة الخرطوم، السودان - 2012</li>
-            </ul>
-        </section>
-
-        <footer>
-            <p>© 2024 الحارث محمد عباس. جميع الحقوق محفوظة.</p>
-        </footer>
+    <!-- صورة قابلة للتعديل -->
+    <div class="profile-pic">
+        <img id="profile-pic" src="path_to_your_image.png" alt="Profile Picture">
+        <input type="file" id="imageUpload" accept="image/*">
     </div>
 
-    <script>
-        function changeProfilePic(event) {
-            var reader = new FileReader();
-            reader.onload = function(){
-                var output = document.getElementById('profile-pic');
-                output.src = reader.result;
-            };
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script>
+    <!-- الاسم -->
+    <h2>Name: <span id="name" class="editable">الحارث محمد عباس</span></h2>
+
+    <!-- الملخص المهني -->
+    <h3>Professional Summary:</h3>
+    <p id="summary" class="editable">
+        With 11 years of experience in Human Resources and Accounting, including expertise in government relations. 
+        Major skills encompass HR management, financial reporting, budgeting and forecasting, compliance, and strategic planning.
+        Holds a Master’s in Business Administration (HR), a Bachelor’s in Accounting, and a Diploma in Financial Accounting. 
+        Demonstrates a proven track record in enhancing HR operations, optimizing payroll and benefits administration, 
+        improving financial accuracy, and managing government interactions.
+    </p>
+
+    <!-- الخبرة العملية -->
+    <h3>Work Experience:</h3>
+
+    <h4>Third Layer Wireless Communications Company, Riyadh, Saudi Oct 2022 – Oct 2024</h4>
+    <p id="experience1" class="editable">
+        Human Resources Officer<br>
+        - Oversaw HR operations for a large workforce, managing recruitment, onboarding, and employee relations.<br>
+        - Implemented HR policies and procedures, improving regulatory compliance and reducing employee grievances.<br>
+        - Conducted annual training programs for staff, leading to enhanced overall employee competency.<br>
+        - Administered employee benefits and compensation, achieving better cost management while ensuring accurate and timely payroll.<br>
+        - Analyzed HR metrics and produced monthly reports, supporting better decision-making and strategic planning.
+    </p>
+
+    <h4>Dawah and Guidance Association, Al-Muzahimiyah, Saudi Arabia Mar 2013 – Jan 2022</h4>
+    <p id="experience2" class="editable">
+        Accountant and HR Specialist<br>
+        - Managed the financial transactions and accounts of the association, ensuring the accuracy of financial records and reports.<br>
+        - Coordinated with various departments to implement financial and HR systems that enhanced overall efficiency.<br>
+        - Handled employee relations, recruitment, and benefits administration, ensuring smooth HR operations.<br>
+        - Supported strategic planning and governance initiatives by providing financial and human resource insights to leadership.
+    </p>
+
+    <h4>Al-Khayal Contracting Est, Riyadh, Saudi Arabia Aug 2012 – Feb 2013</h4>
+    <p id="experience3" class="editable">
+        Accounting Officer<br>
+        - Processed and recorded daily transactions, ensuring 100% accuracy and compliance with financial regulations.<br>
+        - Assisted in the preparation of financial statements and reports, contributing to on-time financial audits and reviews with a 98% compliance rate.<br>
+        - Managed vendor accounts and resolved discrepancies, improving supplier payment processes and relationships by 20%.<br>
+        - Monitored and analyzed financial data to support budgeting and forecasting, enhancing planning accuracy by 15%.
+    </p>
+
+    <!-- المهارات -->
+    <h3>Skills:</h3>
+    <ul id="skills" class="editable">
+        <li>HR Management</li>
+        <li>Financial Reporting</li>
+        <li>Budgeting and Forecasting</li>
+        <li>Compliance and Regulation</li>
+        <li>Employee Training and Development</li>
+        <li>Vendor Management</li>
+        <li>Recruitment and Onboarding</li>
+        <li>Employee Benefits and Compensation Administration</li>
+        <li>Payroll Processing</li>
+        <li>Accounting Software</li>
+        <li>ERP Systems</li>
+        <li>ClickUp Program</li>
+        <li>Government Systems Platforms (Saudi Arabia)</li>
+        <li>Microsoft Office Programs</li>
+        <li>Data Analysis</li>
+        <li>Strategic Planning</li>
+    </ul>
+
+    <!-- اللغات -->
+    <h3>Languages:</h3>
+    <p id="languages" class="editable">
+        Arabic: Native<br>
+        English: Intermediate
+    </p>
+
+    <!-- التعليم -->
+    <h3>Education:</h3>
+    <h4>Entrepreneurship & Business University, Saudi Arabia Mar 2022 – May 2024</h4>
+    <p id="education1" class="editable">
+        Master of Business Administration (MBA – HR)
+    </p>
+
+    <h4>Arab International Academy, Saudi Arabia Jul 2019 – Sep 2022</h4>
+    <p id="education2" class="editable">
+        Bachelor of Accounting
+    </p>
+
+    <h4>University of Khartoum, Khartoum, Sudan Apr 2009 – Jan 2012</h4>
+    <p id="education3" class="editable">
+        Diploma in Financial Accounting
+    </p>
+
+    <!-- زر حفظ التعديلات -->
+    <button class="save-btn" onclick="saveChanges()">Save Changes</button>
+</div>
+
+<script>
+    // تحميل صورة جديدة
+    const imageInput = document.getElementById('imageUpload');
+    imageInput.addEventListener('change', function() {
+        const reader = new FileReader();
+        reader.onload = function() {
+            document.getElementById('profile-pic').src = reader.result;
+        };
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    // التفاعل مع الحقول القابلة للتعديل
+    const editableElements = document.querySelectorAll('.editable');
+
+    editableElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            const currentText = element.innerText;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = currentText;
+            input.style.width = '100%';
+            element.innerHTML = '';
+            element.appendChild(input);
+
+            // استعادة النص عند فقدان التركيز (blur)
+            input.addEventListener('blur', function() {
+                element.innerHTML = input.value;
+            });
+
+            // حفظ النص عند الضغط على Enter
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    element.innerHTML = input.value;
+                }
+            });
+        });
+    });
+
+    // حفظ التعديلات
+    function saveChanges() {
+        alert('Changes saved successfully!');
+    }
+</script>
 
 </body>
 </html>
