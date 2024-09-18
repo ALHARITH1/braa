@@ -73,6 +73,10 @@
             display: block;
             margin: 10px auto;
         }
+
+        .linkedin {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -174,6 +178,12 @@
     <p id="education3" class="editable">
         Diploma in Financial Accounting
     </p>
+
+    <!-- رابط LinkedIn -->
+    <div class="linkedin">
+        <h3>LinkedIn:</h3>
+        <a href="https://www.linkedin.com/in/الحارث-محمد-elharith-abas-77598a11a/" target="_blank">الحارث محمد LinkedIn</a>
+    </div>
 
     <!-- زر حفظ التعديلات -->
     <button class="save-btn" onclick="saveChanges()">Save Changes</button>
